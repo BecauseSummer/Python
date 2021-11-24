@@ -55,7 +55,9 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
+        # 显示天气文本栏
         Form.setWindowTitle(_translate("Form", "天气情况"))
+        '''按钮'''
         self.label.setText(_translate("Form", "城市天气查询"))
         self.label_2.setText(_translate("Form", "请输入城市："))
         self.pushButton.setText(_translate("Form", "查询"))

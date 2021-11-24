@@ -91,9 +91,9 @@ def main():
             print_text(screen, font2, (SCREEN_WIDTH - fwidth)//2, (SCREEN_HEIGHT - fheight)//2, winner.Name + '获胜', RED_COLOR)
 
         if cur_runner == BLACK_CHESSMAN:
-            print_text(screen, font1, RIGHT_INFO_POS_X, Start_X, '获胜' if winner else '落子中', BLUE_COLOR)
+            print_text(screen, font1, RIGHT_INFO_POS_X, Start_X, 'win' if winner else '落子中', BLUE_COLOR)
         else:
-            print_text(screen, font1, RIGHT_INFO_POS_X, Start_X + Stone_Radius2 * 3, '获胜' if winner else '落子中', BLUE_COLOR)
+            print_text(screen, font1, RIGHT_INFO_POS_X, Start_X + Stone_Radius2 * 3, 'win' if winner else '落子中', BLUE_COLOR)
 
         pygame.display.flip()
 

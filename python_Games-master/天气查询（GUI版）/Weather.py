@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt
 from Ui_weather import Ui_Form
 from query import *
 
+# 创建天气类
 class Weather(QWidget, Ui_Form):
     def __init__(self, parent=None):
         # 继承主窗口类

@@ -2,10 +2,14 @@ import json
 import requests
 from json import JSONDecodeError
 
+# 使用一个TXT文本来存放城市代号
 FILENAME = 'city_code.txt'
 
 
 def read_code(filename=FILENAME):
+    '''
+    读取文件，返回城市代号
+    '''
     with open(filename, 'r') as f:
         city_code = json.load(f)
     return city_code
@@ -24,6 +28,7 @@ def query_code(table, city):
 
 
 def query_weather(code):
+    # 天气查询接口
     html = f'http://wthrcdn.etouch.cn/weather_mini?citykey={code}'
 
     try:
