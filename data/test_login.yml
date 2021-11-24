@@ -1,0 +1,29 @@
+- test:
+    name: login case1
+    request:
+        url: http://49.235.x.x:7000/api/v1/login/
+        method: POST
+        headers:
+            Content-Type: application/json
+            User-Agent: python-requests/2.18.4
+        json:
+            username: test
+            password: 123456
+    validate:
+        - eq: [$.msg, login success!]
+        - eq: [$.code, 0]
+
+- test:
+    name: login case2
+    request:
+      url: 49.235.x.x:7000/api/v1/login/
+      method: POST
+      headers:
+        Content-Type: application/json
+        User-Agent: python-requests/2.18.4
+      json:
+        username: test
+        password: 123456
+      validate:
+        - eq: [ $.msg, login success! ]
+        - eq: [ $.code, 0 ]
