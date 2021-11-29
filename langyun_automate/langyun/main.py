@@ -6,18 +6,29 @@ import allure
 from page.login_page import LoginPage
 from selenium import webdriver
 from HTMLTestRunner import HTMLTestRunner
+import yaml
 
 class CaseLogin(unittest.TestCase):
     '''
     朗云登录Case
     '''
+    def get_username(self):
+        data = open('data.yaml', mode='r', encoding='utf-8')
+        username = yaml.load(data)
+        return username[0]['username']
+
+    def get_password(self):
+        data = open('data.yaml', mode='r', encoding='utf-8')
+        username = yaml.load(data)
+        return username[0]['password']
+
     @allure.title("登录成功")
-    def setUp(self):
+    def setUp(self, url, username, password):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10) # 全局隐式等待10s
-        self.url = "http://t2.aservice.langlangyun.com:5480/langyun/public/index.php/workplace/pub/login.html"
-        self.username = '13006662818'
-        self.password = 'langyun'
+        self.url = url
+        self.username = username
+        self.password = password
         
 
     def testLogin(self):

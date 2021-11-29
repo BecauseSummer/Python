@@ -1,0 +1,15 @@
+- Login_data:
+    # url
+  url: http://t2.aservice.langlangyun.com:5480/langyun/public/index.php/workplace/pub/login.html
+
+# 第一组测试数据
+- Case1:
+  username: 13006662818
+  passowrd: 123456
+
+# 第二组测试数据
+- Case2:
+    username: admin
+    password: 123456
+
+
