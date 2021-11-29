@@ -31,6 +31,7 @@ class SingleLinkedList(object):
 
         new_node.next = self.point.next
         self.point.next = new_node
+        
 
     def delete(self, find):
         # 删除节点
@@ -89,6 +90,7 @@ class SingleLinkedList(object):
                 self.point.next = self.point.next.next
                 del pointer
 
+
     # 求中间节点 只允许遍历一次
     def quick_middle(self):
         slow_point = self.head
@@ -136,6 +138,7 @@ class SingleLinkedList(object):
 
 class StudentControlSystem(SingleLinkedList):
     # 打印菜单
+
     def print_menu(self):
         print('*' * 30)
         print('-' * 13 + '菜单' + '-' * 13)

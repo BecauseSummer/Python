@@ -18,7 +18,7 @@ def main():
     pygame.display.set_caption("Tank War ")
     
     # 加载图片,音乐,音效.
-    background_image     = pygame.image.load(r"..\image\background.png")
+    background_image     = pygame.image.load(r"..\images\background.png")
     home_image           = pygame.image.load(r"..\image\home.png")
     home_destroyed_image = pygame.image.load(r"..\image\home_destroyed.png")
     
