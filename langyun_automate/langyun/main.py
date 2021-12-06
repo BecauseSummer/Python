@@ -27,8 +27,8 @@ class CaseLogin(unittest.TestCase):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10) # 全局隐式等待10s
         self.url = url
-        self.username = username
-        self.password = password
+        self.username = CaseLogin.get_username()
+        self.password = CaseLogin.get_password()
         
 
     def testLogin(self):

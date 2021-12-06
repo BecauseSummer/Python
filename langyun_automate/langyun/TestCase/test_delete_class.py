@@ -5,12 +5,15 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 
 class Login():
-    def setUp(self):
+    def setUp(self, url, username,password):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10) # 全局隐式等待10s
-        self.url = "http://t2.aservice.langlangyun.com:5480/langyun/public/index.php/workplace/pub/login.html"
-        self.username = '13006662818'
-        self.password = 'langyun'
+        self.url = url
+        self.username = username
+        self.password = password
+
+    def tearDown(self):
+        self.driver.quit()
 
 class Child(Login):
     def test_select_child(self):
