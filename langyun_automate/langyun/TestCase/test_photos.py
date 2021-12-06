@@ -1,21 +1,9 @@
 # –*–coding:utf-8 –*–
 # 2021-12-06 16:27
 from time import sleep
-from selenium import  webdriver
 from selenium.webdriver.common.by import By
-
-
-class Login():
-    def setup(self, url, username, password):
-        self.driver = webdriver.Chrome()
-        self.url = url
-        self.username = username
-        self.password = password
-
-    def tearDown(self):
-        self.driver.quit()
-
-class photos(Login):
+from langyun_automate.langyun.page import webdriver_initialzation
+class photos(webdriver_initialzation.CaseLogin):
     def test_add_photos(self):
         # 新建相册
         self.driver.set_window_size(1936, 1096)
@@ -42,6 +30,7 @@ class photos(Login):
         self.driver.switch_to.frame(0)
         self.driver.find_element(By.CSS_SELECTOR, ".tabBar > span:nth-child(2)").click()
         self.driver.switch_to.frame(0)
+        sleep(3)
         self.driver.find_element(By.CSS_SELECTOR, ".col-md-2:nth-child(1) > img").click()
         self.driver.find_element(By.CSS_SELECTOR, ".col-md-2:nth-child(2) > img").click()
         self.driver.find_element(By.CSS_SELECTOR, ".col-md-2:nth-child(3) > img").click()

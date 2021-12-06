@@ -1,21 +1,10 @@
 # –*–coding:utf-8 –*–
 # 2021-04-14 16:02
-from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+from langyun_automate.langyun.page import webdriver_initialzation
 
-class Login():
-    def setUp(self, url, username,password):
-        self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(10) # 全局隐式等待10s
-        self.url = url
-        self.username = username
-        self.password = password
-
-    def tearDown(self):
-        self.driver.quit()
-
-class Child(Login):
+class Child(webdriver_initialzation.CaseLogin):
     def test_select_child(self):
         self.driver.find_element(By.CLASS_NAME,"#li-5 div").click()
         self.driver.find_element(By.LINK_TEXT, "班级信息").click()

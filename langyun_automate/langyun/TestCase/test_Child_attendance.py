@@ -1,21 +1,10 @@
 # –*–coding:utf-8 –*–
 # 2021-12-06 16:41
 import time
-from selenium import webdriver
 from selenium.webdriver.common.by import By
+from langyun_automate.langyun.page import webdriver_initialzation
 
-
-class Login():
-    def setup(self, url, username, password):
-        self.driver = webdriver.Chrome()
-        self.url = url
-        self.username = username
-        self.passwrod =password
-
-    def tearDown(self):
-        self.driver.quit()
-
-class Child_attendance(Login):
+class Child_attendance(webdriver_initialzation.CaseLogin):
     def test_click_attendance_analysis(self):
         self.driver.set_window_size(1936, 1096)
         self.driver.find_element(By.CSS_SELECTOR, "#li-5 .img-responsive:nth-child(1)").click()

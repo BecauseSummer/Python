@@ -1,22 +1,11 @@
 # –*–coding:utf-8 –*–
 # 2021-12-06 16:13
-from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from time import sleep
+from langyun_automate.langyun.page import webdriver_initialzation
 
-class Login():
-    def setup(self, url,username, password):
-        self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(10)
-        self.url = url
-        self.username = username
-        self.password = password
-
-    def tearDown(self):
-        self.driver.quit()
-
-class add_class(Login):
+class add_class(webdriver_initialzation.CaseLogin):
     def test_add_new_class(self):
         self.driver.set_window_size(1936, 1096)
         self.driver.find_element(By.CSS_SELECTOR, "#li-5 div").click()
