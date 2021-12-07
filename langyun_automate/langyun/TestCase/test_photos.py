@@ -3,6 +3,9 @@
 from time import sleep
 from selenium.webdriver.common.by import By
 from langyun_automate.langyun.page import webdriver_initialzation
+'''
+相册操作
+'''
 class photos(webdriver_initialzation.CaseLogin):
     def test_add_photos(self):
         # 新建相册

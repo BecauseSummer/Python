@@ -1,6 +1,5 @@
 # –*–coding:utf-8 –*–
 # 2021-12-06 16:41
-import time
 from selenium.webdriver.common.by import By
 from langyun_automate.langyun.page import webdriver_initialzation
 
@@ -13,7 +12,6 @@ class Child_attendance(webdriver_initialzation.CaseLogin):
         self.driver.find_element(By.LINK_TEXT, "年级考勤分析").click()
         self.driver.find_element(By.LINK_TEXT, "考勤分析").click()
         self.driver.switch_to.frame(0)
-        time.sleep(3)
         self.driver.find_element(By.NAME, "yearMonth").click()
         self.driver.find_element(By.NAME, "yearMonth").send_keys("2020-12")
         self.driver.find_element(By.ID, "cx").click()

@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from langyun_automate.langyun.page import webdriver_initialzation
 from time import sleep
 
+#编辑已有教学计划
 class teaching_plan(webdriver_initialzation.CaseLogin):
     def test_teaching_plan(self):
         self.driver.set_window_size(1936, 1096)

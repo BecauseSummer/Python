@@ -3,6 +3,7 @@
 import unittest, yaml, time, allure
 from selenium import webdriver
 from .login_page import LoginPage
+from selenium.webdriver.common.by import By
 
 class CaseLogin(unittest.TestCase) :
     '''

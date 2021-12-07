@@ -6,6 +6,7 @@ from langyun_automate.langyun.page import webdriver_initialzation
 from time import sleep
 
 class other_plan(webdriver_initialzation.CaseLogin):
+    # 查看其他计划
     def test_other_plan(self):
         self.driver.set_window_size(1936, 1096)
         self.driver.find_element(By.CSS_SELECTOR, "#li-6 div").click()

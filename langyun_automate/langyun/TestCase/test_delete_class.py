@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from langyun_automate.langyun.page import webdriver_initialzation
 
 class Child(webdriver_initialzation.CaseLogin):
+    # 删除班级
     def test_select_child(self):
         self.driver.find_element(By.CLASS_NAME,"#li-5 div").click()
         self.driver.find_element(By.LINK_TEXT, "班级信息").click()
