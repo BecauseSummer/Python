@@ -1,0 +1,8 @@
+*.pyc
+*.py~
+config/__init__.py
+.idea/
+cookies
+verify.gif
+lib/cookies
+lib/verify.gif
