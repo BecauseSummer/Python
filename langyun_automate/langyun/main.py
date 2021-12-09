@@ -1,12 +1,13 @@
 # coding=utf-8
 import os, unittest
 from HTMLTestRunner import HTMLTestRunner
-from .page import webdriver_initialzation
+from .page.webdriver_initialzation import CaseLogin
+
 
 if __name__ == '__main__':
     unittest.main(['-s', '--alluredir','result'])
     suite = unittest.TestSuite()
-    suite.addTests( unittest.TestLoader().loadTestsFromTestCase( webdriver_initialzation.CaseLogin ) )
+    suite.addTests( unittest.TestLoader().loadTestsFromTestCase(CaseLogin) )
     filepath = 'D:/Python/langyun_automate/Report'
     if not os.path.exists(filepath):
         os.makedirs(filepath)
