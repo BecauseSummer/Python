@@ -64,7 +64,7 @@ def buy_milk_tea():
             elif pay_money > money :
                 ret_money = pay_money - money
                 print("找您 {:.2f} 元".format(float(ret_money)))
-                Milk_tea_list.append((milk_tea_dict[milk_tea_number],buy_time))
+                Milk_tea_list.append([milk_tea_dict[milk_tea_number],buy_time])
         else:
             tips = print("您至少需要选择一杯奶茶及以上哦~")
             return tips
