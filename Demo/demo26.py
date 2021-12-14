@@ -1,6 +1,6 @@
 # –*–coding:utf-8 –*–
 # 2021-12-07 16:04
-import unittest2 as unittest
+import unittest
 class demoTest(unittest.TestCase) :
     def test1(self) :
         self.assertEqual(4+5, 9)
