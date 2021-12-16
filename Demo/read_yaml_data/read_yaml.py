@@ -12,5 +12,15 @@ print(type(cfg))
 host_info = yaml.load(cfg, Loader=yaml.FullLoader)
 print(type(host_info))
 
-print("node1 的IP地址是:%s" % host_info.get('k8s')[0].get('ip'))
-print("DB的端口是： %s" % host_info.get('DB').get('port'))
+def get_ip():
+    port = host_info.get('DB').get('port')
+    print(port)
+    ip = print('ip是：%s'%host_info.get('DB').get('ip'))
+    return ip, port
+
+def get_port():
+    port = print('IP地址是:%s'%host_info.get('k8s')[0].get('ip'))
+    return port
+
+get_ip()
+get_port()

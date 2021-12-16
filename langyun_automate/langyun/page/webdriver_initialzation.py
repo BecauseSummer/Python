@@ -12,6 +12,7 @@ class CaseLogin(unittest.TestCase) :
         data = open('data.yaml', mode='r', encoding='utf-8')
         url_info = yaml.load(data, Loader=yaml.FullLoader)
         url = url_info.get('Login_info').get('url')
+        return url
 
     def get_username(self) :
         data = open('data.yaml', mode='r', encoding='utf-8')
