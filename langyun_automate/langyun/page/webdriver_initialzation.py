@@ -8,24 +8,30 @@ class CaseLogin(unittest.TestCase) :
     '''
     朗云登录Case
     '''
+    def get_url(self):
+        data = open('data.yaml', mode='r', encoding='utf-8')
+        url_info = yaml.load(data, Loader=yaml.FullLoader)
+        url = url_info.get('Login_info').get('url')
 
     def get_username(self) :
         data = open('data.yaml', mode='r', encoding='utf-8')
-        username = yaml.load(data)
-        return username[0]['username']
+        username_name = yaml.load(data, Loader=yaml.FullLoader)
+        username = username_name.get('Login_info').get('username')
+        return username
 
     def get_password(self) :
         data = open('data.yaml', mode='r', encoding='utf-8')
-        username = yaml.load(data)
-        return username[0]['password']
+        password_pwd = yaml.load(data, Loader=yaml.FullLoader)
+        password = password_pwd.get('Login_info').get('password')
+        return None
 
     @allure.title("登录成功")
     def setUp(self, url, username, password) :
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)  # 全局隐式等待10s
-        self.url = url
-        self.username = CaseLogin.get_username()
-        self.password = CaseLogin.get_password()
+        self.url = CaseLogin.get_url(url)
+        self.username = CaseLogin.get_username(username)
+        self.password = CaseLogin.get_password(password)
 
     def testLogin(self) :
         login_page = LoginPage(self.driver, self.url, u'后台登录 - 朗云智慧幼教管理平台')
